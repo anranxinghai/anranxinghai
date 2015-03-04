@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="libs/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="libs/ormlite-android-4.48.jar" sourcepath="E:/company/libs/ormlite-android/ormlite-android-4.48-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/E:/company/libs/ormlite-android/ormlite-android-4.48-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/ormlite-core-4.48.jar" sourcepath="E:/company/libs/ormlite-android/ormlite-core-4.48-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/E:/company/libs/ormlite-android/ormlite-jdbc-4.48-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/ormlite-content-provider-library-1.0.3.jar" sourcepath="E:/company/libs/ormlite-android/ormlite-content-provider-library-1.0.3-sources.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

@@ -1,0 +1,30 @@
+#
+# generated on 2014/08/08 05:19:36
+#
+# --table-start--
+dataClass=com.anranxinghai.application.aidl.UserInfo
+tableName=user
+# --table-fields-start--
+# --field-start--
+fieldName=userId
+columnName=_id
+canBeNull=false
+generatedId=true
+useGetSet=true
+unique=true
+# --field-end--
+# --field-start--
+fieldName=userName
+columnName=user_name
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --field-start--
+fieldName=userPassword
+columnName=user_password
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
