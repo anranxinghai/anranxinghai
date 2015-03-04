@@ -1,0 +1,40 @@
+package com.anranxinghai.musicplayer.runnable;
+
+import java.util.Map;
+
+import com.anranxinghai.musicplayer.http.RegistedHttp;
+import com.anranxinghai.musicplayer.http.RegisterHttp;
+
+import android.R.bool;
+
+public class RegistedThread extends SecurityThread {
+
+	
+	private Map<String, String> params;
+	private boolean isRegisted = false;
+	
+	
+	
+	public boolean isRegisted() {
+		return isRegisted;
+	}
+
+
+
+	public RegistedThread(Map<String, String> param) {
+		this.params = param;
+	}
+
+
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+		if (!stopRequested) {
+			RegistedHttp registedHttp = new RegistedHttp();
+			isRegisted = registedHttp.isRegisted(params);
+		}
+	}
+
+}

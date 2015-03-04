@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blackgray">#23242D</color>
+    <color name="other">#fff00f</color>
+    <color name="blue">#0000FF</color>
+    <color name="red">#FF0033</color>
+    <color name="pink">#FFCCFF</color>
+    <color name="green">#00FF00</color>
+
+    <!-- 熟识商机模块字体颜色 -->
+    <color name="smarket_orange">#F6A42B</color>
+    <color name="smarket_green">#9DBC79</color>
+    <color name="smarket_blue">#358AFF</color>
+    <color name="smarket_black">#4D6982</color>
+    <color name="smarket_lightblue">#5DC8FF</color>
+    <color name="smarket_red">#FA5C5C</color>
+
+</resources>

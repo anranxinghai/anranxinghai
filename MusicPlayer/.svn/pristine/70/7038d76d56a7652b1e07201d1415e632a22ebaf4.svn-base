@@ -1,0 +1,21 @@
+package com.anranxinghai.musicplayer.http;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.anranxinghai.musicplayer.util.HttpUtils;
+
+public class RegisterHttp {
+
+	private String url = "registerUrl"; 
+	private Map <String,String> param= new HashMap<String, String>(); 
+	public boolean postSuccess(){
+		
+		if (HttpUtils.submitPostData(url, param,"utf-8").equals("registerSuccess")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	 
+}

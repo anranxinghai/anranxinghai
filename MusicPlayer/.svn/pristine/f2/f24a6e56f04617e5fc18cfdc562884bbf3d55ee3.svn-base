@@ -1,0 +1,80 @@
+package com.anranxinghai.musicplayer.activity;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.telephony.TelephonyManager;
+import android.widget.Toast;
+
+import com.anranxinghai.musicplayer.MusicPlayerApplication;
+import com.anranxinghai.musicplayer.R;
+import com.anranxinghai.musicplayer.runnable.FileTransThread;
+import com.anranxinghai.musicplayer.runnable.RegistedThread;
+
+public class WelcomeActivity extends Activity {
+
+	Intent intent = new Intent();
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_welcome);
+		MusicPlayerApplication.getInstance().addActivity(this);
+
+		TelephonyManager tm = (TelephonyManager) WelcomeActivity.this
+				.getSystemService(Context.TELEPHONY_SERVICE);
+		String phoneNum = tm.getLine1Number();
+		phoneNum = "15881640991";
+
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("userTel", phoneNum);
+
+		// 为防止线程还未执行完添加上述线程休眠200ms的代码
+
+		RegistedThread registedThread = new RegistedThread(params);
+		registedThread.start();
+
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		boolean isRegisted = registedThread.isRegisted();
+		//isRegisted = true;
+		if (isRegisted) {
+
+			intent.setClass(WelcomeActivity.this,
+					MusicPlayerActivity.class);
+			
+		}else {
+			intent.setClass(WelcomeActivity.this, RegisterActivity.class);
+		}
+		new Handler().postDelayed(new Runnable() {
+			public void run() {
+
+				
+				
+				startActivity(intent);
+				finish();
+
+				overridePendingTransition(android.R.anim.fade_in,
+						android.R.anim.fade_out);
+			}
+
+		}, 1000);
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		MusicPlayerApplication.getActivities().removeFirst();
+	}
+
+}
