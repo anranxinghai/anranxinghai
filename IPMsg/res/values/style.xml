@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- theme_FullScreen 是样式的名字，后面是父类样子 -->
+    <style 
+        name="ThemeFullScreen" 
+        parent="android:Theme.Black">
+        
+        <item name="android:windowNoTitle">true</item>
+        <!-- 取出标题 -->
+        
+        <item name="android:windowFullscreen">?android:windowNoTitle</item>
+        <!-- 实现全屏 -->
+    </style>
+
+</resources>

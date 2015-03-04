@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.swust.ipmsg"
+    android:theme="@style/AppTheme"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".IPMsgApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- android:theme="@android:style/Theme.NoTitleBar" -->
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/ThemeFullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ChatActivity"
+            android:windowSoftInputMode="adjustPan"
+             android:screenOrientation="portrait"
+              />
+        <activity android:name=".activity.GallerytActivity" />
+        <activity
+            android:name=".activity.MenuActivity"
+            android:theme="@style/ThemeFullScreen" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name=".activity.MessageActivity" />
+        <activity android:name=".activity.GroupActivity" >
+            <intent-filter>
+                <action android:name="com.swust.ipmsg.ss" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" >
+                </category>
+            </intent-filter>
+        </activity>
+>
+        <activity android:name=".activity.MyFileManager" />
+
+        
+       <!--  <receiver android:name=".receiver.ConnectionReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" >
+                </action>
+            </intent-filter>
+        </receiver>
+        -->
+
+        <receiver android:name=".receiver.FileTransport" >
+            <intent-filter>
+                <action android:name="com.swust.ipmsg.FILE_TRANSPORT" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.IPmsgService"
+            android:enabled="true" >
+        </service>
+    </application>
+
+</manifest>

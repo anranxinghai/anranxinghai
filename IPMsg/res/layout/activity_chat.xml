@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+  	android:id="@+id/person_chart_layout"
+    android:background="@drawable/background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:id="@+id/myinfo_panel"
+		android:gravity="center_vertical">
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/my_head_icon"/>
+		<LinearLayout 
+	    android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal"
+		android:background="@drawable/tab_bg"
+		android:id="@+id/myinfo_panel"
+		android:gravity="center_vertical">
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="50dp"
+			android:textColor="@color/red"
+			android:id="@+id/my_nickename"/>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<ScrollView 
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:scrollbars="vertical"
+    	android:id="@+id/chart_msg_scroll"
+    	android:layout_weight="1">
+    	<LinearLayout android:layout_weight="1"
+			android:id="@+id/chart_msg_panel"
+			android:orientation="vertical"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"/>
+    </ScrollView>
+    	
+  <!-- 底部按钮 -->
+  <LinearLayout android:gravity="center"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+	<Button     
+	    android:id="@+id/button_send_file"  
+	    android:layout_width="wrap_content"    
+	    android:layout_height="62dp"
+	    android:drawableLeft="@drawable/attatchment_icon"
+	    android:text="@string/file"/>
+	<EditText     
+	    android:id="@+id/text_msg_content"  
+	    android:layout_width="fill_parent"    
+	    android:layout_height="wrap_content" 
+	    android:maxLength="60"
+	    android:lines="2"
+	    android:focusableInTouchMode="true"
+	    android:scrollbars="vertical"
+	    android:layout_weight="1"/>
+    <Button     
+	    android:id="@+id/button_send_msg"  
+	    android:layout_width="wrap_content"    
+	    android:layout_height="62dp" 
+	    android:drawableLeft="@drawable/sendmsg_icon"
+	    android:text="@string/send"/>
+  </LinearLayout>
+  
+</LinearLayout>

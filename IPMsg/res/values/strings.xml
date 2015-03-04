@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IPMsg</string>
+    <string name="accept">接收</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    
+    <string name="alert_dialog_ok">是</string>
+    <string name="alert_dialog_seting_wifi_title">网络错误</string>
+    <string name="alert_dialog_msg">您还未开启Wifi，是否开启</string>
+    <string name="alert_dialog_cancle">否</string>
+    
+    <string name="android">Android</string>
+    <string name="button">进入</string>
+    <string name="call_label">语音呼叫</string>
+    <string name="close">关闭</string>
+    <string name="connect">Connect</string>
+    <string name="content_is_empty">内容为空不能发送!</string>
+    <string name="current_path_label">当前路径: </string>
+    
+    
+    <string name="file">文件</string>
+    <string name="folder_can_not_write">文件夹不可写，无法保存文件！</string>
+    <string name="hello">聊天对话</string>
+    
+    <string name="hello_world">Hello world!</string>
+    <string name="init_msg_count">{%1$d}</string>
+    <string name="insert">Insert</string>
+    <string name="nickname">昵称</string>
+    
+    <string name="send">发送</string>
+    <string name="send_file">发送文件</string>
+    <string name="select_file_for_send">选择要发送的文件</string>
+    <string name="select_path_for_save">选择用来接收文件的文件夹</string>
+    <string name="start_to_send_file">正在发送文件</string>
+    <string name="talk_with">正在与{ %1$s }进行语音通话</string>
+    <string name="unConnect">UnConnect</string>
+</resources>

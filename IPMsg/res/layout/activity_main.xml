@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewSnsLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.8"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <!--
+             <EditText
+            android:id="@+id/text_signature"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dip"
+            android:text="@string/android" 
+        -->
+
+        <ImageButton
+            android:id="@+id/head_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000"
+            android:paddingLeft="10dip"
+            android:paddingTop="20dp"
+             />
+
+        <TextView
+            android:id="@+id/text_nickname"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/head_icon"
+            android:layout_centerHorizontal="true"
+            android:text="@string/nickname" />
+
+        <AutoCompleteTextView
+            android:id="@+id/text_search"
+            android:layout_width="280dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/search_box"
+            android:ems="10"
+            android:focusableInTouchMode="true"
+            android:text="   I believe!" />
+
+        <ImageButton
+            android:id="@+id/button_searche"
+            android:layout_width="44dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/text_search"
+            android:background="@drawable/search_button"
+            android:paddingBottom="3dp"
+            android:paddingRight="3dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical" >
+
+        <ExpandableListView
+            android:id="@+id/friendList"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:cacheColorHint="#00000000" />
+
+        <!--
+        <ExpandableListView android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@android:color/transparent"
+		android:cacheColorHint="#00000000"
+		android:id="@+id/main_list"/>
+        -->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/button_private"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#00000000"
+            android:src="@drawable/private_button" />
+
+        <ImageButton
+            android:id="@+id/button_group"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/button_private"
+            android:background="#00000000"
+            android:focusableInTouchMode="true"
+            android:src="@drawable/group_button" />
+    </RelativeLayout>
+
+</LinearLayout>

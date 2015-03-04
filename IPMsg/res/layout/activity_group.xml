@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewSnsLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ExpandableListView
+            android:id="@id/android:list"
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:layout_alignParentLeft="true"
+            android:background="#00000000"
+            android:drawSelectorOnTop="false" >
+        </ExpandableListView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/flip7"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#00000000"
+            android:src="@drawable/private_button" />
+
+        <ImageButton
+            android:id="@+id/flip8"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/flip7"
+            android:background="#00000000"
+            android:src="@drawable/group_button" />
+    </RelativeLayout>
+
+</LinearLayout>
