@@ -2,6 +2,7 @@
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -84,6 +85,228 @@ public class Constant {
 		exts.put("trp", R.drawable.video);
 		exts.put("tp", R.drawable.video);
 		exts.put("ts", R.drawable.video);
+	}
+	
+	//1
+	private static final String emotionWX = "^wx^";
+	private static final String emotionPZ = "^pz^";
+	private static final String emotionSe = "^se^";
+	private static final String emotionFD = "^fd^";
+	private static final String emotionDY = "^dy^";
+	private static final String emotionLL = "^ll^";
+	//2
+	private static final String emotionHX = "^hx^";
+	private static final String emotionDZ = "^dz^";
+	private static final String emotionShui = "^shui^";
+	private static final String emotionJY = "^jy^";
+	private static final String emotionGG = "^gg^";
+	private static final String emotionFN = "^fn^";
+	//3
+	private static final String emotionTP = "^tp^";
+	private static final String emotionCY = "^cy^";
+	private static final String emotionNG = "^ng^";
+	private static final String emotionKu = "^ku^";
+	private static final String emotionLengH = "^lengh^";
+	private static final String emotionZK = "^zk^";
+	//4
+	private static final String emotionTu = "^tu^";
+	private static final String emotionTX = "^tx^";
+	private static final String emotionKA = "^ka^";
+	private static final String emotionBY = "^by^";
+	private static final String emotionAM = "^am^";
+	private static final String emotionJE = "^je^";
+	//5
+	private static final String emotionKun = "^kun^";
+	private static final String emotionJK= "^jk^";
+	private static final String emotionLH = "^lh^";
+	private static final String emotionHanX = "^hanx^";
+	private static final String emotionDB = "^wx^";
+	private static final String emotionFenD = "^fend^";
+	//6
+	private static final String emotionZhM = "^zhm^";
+	private static final String emotionYw = "^yw^";
+	private static final String emotionXu = "^xu^";
+	private static final String emotionYun = "^yun^";
+	private static final String emotionZheM = "^zhem^";
+	private static final String emotionShuai = "^shuai^";
+	//7
+	private static final String emotionKL = "^kl^";
+	private static final String emotionQD = "^qd^";
+	private static final String emotionZJ = "^zj^";
+	private static final String emotionCH = "^ch^";
+	private static final String emotionKB = "^kb^";
+	private static final String emotionGZ = "^gz^";
+	//8
+	private static final String emotionQDL = "^qdl^";
+	private static final String emotionHuaiX = "^huaix^";
+	private static final String emotionZHH = "^zhh^";
+	private static final String emotionYHH = "^yhh^";
+	private static final String emotionHQ = "^hq^";
+	private static final String emotionBS = "^bs^";
+	//9
+	private static final String emotionWQ = "^wq^";
+	private static final String emotionZQL = "^zql^";
+	private static final String emotionXE = "^xe^";
+	private static final String emotionQQ = "^qq^";
+	private static final String emotionDeng = "^deng^";
+	private static final String emotionKeL = "^kel^";
+	//10
+	private static final String emotionKKL = "^kkl^";
+	private static final String emotionCD = "^cd^";
+	private static final String emotionXG = "^xg^";
+	private static final String emotionPJ = "^pj^";
+	private static final String emotionLQ = "^lq^";
+	private static final String emotionPP = "^pp^";
+	//11
+	private static final String emotionKF = "^kf^";
+	private static final String emotionMF = "^mf^";
+	private static final String emotionZT = "^tx^";
+	private static final String emotionMG = "^mg^";
+	private static final String emotionMGDX = "^mgdx^";
+	private static final String emotionWM = "^wm^";
+	//12
+	private static final String emotionAX = "^ax^";
+	private static final String emotionXS = "^xs^";
+	private static final String emotionDG = "^dg^";
+	private static final String emotionSD = "^sd^";
+	private static final String emotionZD = "^zd^";
+	private static final String emotionDAO = "^dao^";
+	//13
+	private static final String emotionZQ = "^zq^";
+	private static final String emotionJGZ = "^jgz^";
+	private static final String emotionBB = "^bb^";
+	private static final String emotionYL = "^yl^";
+	private static final String emotionTY = "^ty^";
+	private static final String emotionLW = "^lw^";
+	//14
+	private static final String emotionXR = "^xr^";
+	private static final String emotionQiang = "^qiang^";
+	private static final String emotionRuo = "^ruo^";
+	private static final String emotionWS = "^ws^";
+	private static final String emotionShL = "^shl^";
+	private static final String emotionFL = "^fl^";
+	//15
+	private static final String emotionGY = "^gy^";
+	private static final String emotionQT = "^qt^";
+	private static final String emotionCJ = "^cj^";
+	private static final String emotionAN = "^an^";
+	private static final String emotionNO = "^no^";
+	private static final String emotionOK = "^ok^";
+	
+
+	public static Map<String, Integer> emotions = new TreeMap<String, Integer>();
+ 	static {
+ 		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^pz^", R.drawable.emotion_pz);
+		emotions.put("^se^", R.drawable.emotion_se);
+		emotions.put("^deng^", R.drawable.emotion_deng);
+		emotions.put("^ku^", R.drawable.emotion_ku);
+		emotions.put("^ll^", R.drawable.emotion_ll);
+		
+		emotions.put("^hx^", R.drawable.emotion_hx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
+		emotions.put("^wx^", R.drawable.emotion_wx);
 	}
 
 	public static Integer[] mImageIds = { R.drawable.head_01, R.drawable.head_02,

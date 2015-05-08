@@ -27,7 +27,6 @@ public class Packet {
 	
 	private static final String split = "\0";
 	private static final String split2 = split + split;
-	private static final String split3 = split + split + split;
 	private static final String split5 = split + split + split + split + split;
 
 	public Packet() {
@@ -52,7 +51,7 @@ public class Packet {
 		lastAddtion = telephoneName;
 		
 		additionalSection = firstAddtion + split + group + split + mac + split5 + x + 
-				split3 + icon;
+				split2 + icon;
 		/*System.out.println(additionalSection);
 		System.out.println("输出接收到的字符");
 		byte [] b = additionalSection.getBytes();
@@ -62,7 +61,7 @@ public class Packet {
 		}*/
 		
 	}
-
+	//3.1.8:839539295:N8_SJ:Android:1025:N8_SJ Android 00-a4-05-03-06-5d     2   3
 	public Packet(String string) {
 		String[] strings = {"","","","","",""};
 		// Splits this string using the supplied regularExpression. Equivalent
@@ -70,7 +69,7 @@ public class Packet {
 		// explanation of limit. See Pattern for regular expression syntax.
 		System.out.print(string+"\n");
 		
-		char[] chars = string.toCharArray();
+		/*char[] chars = string.toCharArray();
 		
 		int j = 0;
 		for (int i = 0; i < chars.length;i++) {
@@ -87,12 +86,22 @@ public class Packet {
 			else {
 				strings[j] += chars[i];
 			}
+		}*/
+
+		int length = 0;
+		for (int i = 0; i < 6; i++) {
+			if (i < 5) {
+				strings[i] = string.substring(length, string.indexOf(":", length));
+				length = string.indexOf(":", length) + 1;
+			} else {
+				strings[i] = string.substring(length, string.length());
+			}
+			System.out.println("strings[" + i + "]:" + strings[i]);
 		}
-		
 		byte [] b = string.getBytes();
 		System.out.println(b);
 		for (int i = 0; i < b.length; i++) {
-			System.out.println(b[i]);
+			System.out.println("b[" + i + "]" + b[i]);
 		}
 		vision = strings[0];
 		packetNO = Integer.valueOf(strings[1]).intValue();
@@ -146,7 +155,7 @@ public class Packet {
 				group = tem1[1];
 				mac = tem1[2];
 			
-				String[] tem2 = tem[1].split(split3); 
+				String[] tem2 = tem[1].split(split2); 
 				x = tem2[0];
 				icon = Integer.valueOf(tem2[1]).intValue();
 			}

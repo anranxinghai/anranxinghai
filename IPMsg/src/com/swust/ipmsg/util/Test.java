@@ -1,13 +1,9 @@
 package com.swust.ipmsg.util;
 
-import java.awt.print.Printable;
-
-import android.R.integer;
-
 public class Test {
 	int inttype = -1;
 	String stringType = "";
-	static String statictypeString = "" ;
+	static String staticTypeString = "" ;
 	public Test(int i){
 		this.inttype = i;
 	}
@@ -25,8 +21,8 @@ public class Test {
 		/*inttype = 1;
 		print(statictypeString);*/
 		test.inttype = 5;
-		statictypeString = "static";
-		test.print(statictypeString);
+		staticTypeString = "static";
+		test.print(staticTypeString);
 	}
 	
 	public void print(String string){
