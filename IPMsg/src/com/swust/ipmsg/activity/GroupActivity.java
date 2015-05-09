@@ -9,6 +9,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -310,7 +311,12 @@ public class GroupActivity extends ExpandableListActivity implements
 	public boolean onTouch(View v, MotionEvent event) {
 		return this.detector.onTouchEvent(event);
 	}
-
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		finish();
+	}
 	
 	public boolean onDown(MotionEvent e) {
 		return false;
@@ -346,4 +352,5 @@ public class GroupActivity extends ExpandableListActivity implements
 	public boolean onSingleTapUp(MotionEvent e) {
 		return false;
 	}
+
 }

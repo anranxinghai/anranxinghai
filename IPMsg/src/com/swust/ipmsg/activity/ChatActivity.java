@@ -1,9 +1,7 @@
 package com.swust.ipmsg.activity;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,24 +12,26 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
-import android.view.GestureDetector;
-import android.view.GestureDetector.OnGestureListener;
+import android.text.style.ImageSpan;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +40,6 @@ import com.swust.ipmsg.R;
 import com.swust.ipmsg.adapter.ReceiveSendFileListAdapter;
 import com.swust.ipmsg.service.PacketInternet;
 import com.swust.ipmsg.util.Constant;
-import com.swust.ipmsg.util.FileName;
 import com.swust.ipmsg.util.FileState;
 import com.swust.ipmsg.util.IPMsg;
 import com.swust.ipmsg.util.Message;
@@ -111,16 +110,7 @@ public class ChatActivity extends Activity implements OnClickListener{
 		chatMessages = PacketInternet.getChatMessages();
 		person = (Person)intent.getExtras().getSerializable("person");
 		me = (Person)intent.getExtras().getSerializable("me");
-		
-		((ImageView)findViewById(R.id.my_head_icon)).setImageResource(person.getIcon());
-		((TextView)findViewById(R.id.my_nickename)).setText(person.getUserName());
-		msgContentText = (EditText)findViewById(R.id.text_msg_content);
-		sendMsg = (Button)findViewById(R.id.button_send_msg);
-		sendMsg.setOnClickListener(this);
-		sendFile = (Button)findViewById(R.id.button_send_file);
-		sendFile.setOnClickListener(this);
-		chartMsgPanel = (LinearLayout)findViewById(R.id.chart_msg_panel);
-		chartMsgScroll = (ScrollView)findViewById(R.id.chart_msg_scroll);
+		initView();
 		
 		//当前Activity与后台MainService进行绑定
 //        mMainServiceIntent = new Intent(this,MainService.class);
@@ -129,7 +119,68 @@ public class ChatActivity extends Activity implements OnClickListener{
         
 	}
 
+	private void initView(){
+		((ImageView)findViewById(R.id.my_head_icon)).setImageResource(person.getIcon());
+		((TextView)findViewById(R.id.my_nickename)).setText(person.getUserName());
+		msgContentText = (EditText)findViewById(R.id.text_msg_content);
+		msgContentText.addTextChangedListener(new MsgTextWatcher());
+		sendMsg = (Button)findViewById(R.id.button_send_msg);
+		sendMsg.setOnClickListener(this);
+		sendFile = (Button)findViewById(R.id.button_send_file);
+		sendFile.setOnClickListener(this);
+		chartMsgPanel = (LinearLayout)findViewById(R.id.chart_msg_panel);
+		chartMsgScroll = (ScrollView)findViewById(R.id.chart_msg_scroll);
+	}
 	
+	class MsgTextWatcher implements TextWatcher{
+
+		public View view;
+		@Override
+		public void beforeTextChanged(CharSequence s, int start, int count,
+				int after) {
+			// TODO Auto-generated method stub
+			
+			
+		}
+
+		@Override
+		public void onTextChanged(CharSequence s, int start, int before,
+				int count) {
+			// TODO Auto-generated method stub
+			SpannableString ss = new SpannableString(s);
+			String msg = s.toString();
+			for (String emotionKey : Constant.emotions.keySet()) {
+				if (msg.contains(emotionKey)) {
+					Drawable d = getResources().getDrawable(Constant.emotions.get(emotionKey));
+					d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+					ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BASELINE);
+			         //用ImageSpan替换文本
+			         ss.setSpan(span, 18, 19, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+				}
+			}
+			if ("android.widget.TextView".equals(view.getClass().getName())) {
+				((TextView)view).setText(ss);
+			} else if("android.widget.EditText".equals(view.getClass().getName()) ){
+				((EditText)view).setText(ss);
+			}
+		}
+
+		@Override
+		public void afterTextChanged(Editable s) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		finish();
+	}
+
 	@Override
 	public void onClick(View vi) {
 		switch(vi.getId()){
