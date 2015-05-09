@@ -196,117 +196,112 @@ public class Constant {
 
 	public static Map<String, Integer> emotions = new TreeMap<String, Integer>();
  	static {
- 		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^pz^", R.drawable.emotion_pz);
-		emotions.put("^se^", R.drawable.emotion_se);
-		emotions.put("^deng^", R.drawable.emotion_deng);
-		emotions.put("^ku^", R.drawable.emotion_ku);
-		emotions.put("^ll^", R.drawable.emotion_ll);
+ 		//1
+		emotions.put(emotionWX, R.drawable.emotion_wx);
+		emotions.put(emotionPZ, R.drawable.emotion_pz);
+		emotions.put(emotionSe, R.drawable.emotion_se);
+		emotions.put(emotionFD, R.drawable.emotion_fd);
+		emotions.put(emotionDY, R.drawable.emotion_ku);
+		emotions.put(emotionLL, R.drawable.emotion_ll);
+		//2
+		emotions.put(emotionHX, R.drawable.emotion_hx);
+		emotions.put(emotionDZ, R.drawable.emotion_dz);
+		emotions.put(emotionShui, R.drawable.emotion_shui);
+		emotions.put(emotionJY, R.drawable.emotion_jy);
+		emotions.put(emotionGG, R.drawable.emotion_gg);
+		emotions.put(emotionFN, R.drawable.emotion_fn);
+		//3
+		emotions.put(emotionTP, R.drawable.emotion_tp);
+		emotions.put(emotionCY, R.drawable.emotion_cy);
+		emotions.put(emotionNG, R.drawable.emotion_wx);
+		emotions.put(emotionKu, R.drawable.emotion_ku);
+		emotions.put(emotionLengH, R.drawable.emotion_lengh);
+		emotions.put(emotionZK, R.drawable.emotion_zk);
+		//4
+		emotions.put(emotionTu, R.drawable.emotion_tu);
+		emotions.put(emotionTX, R.drawable.emotion_tx);
+		emotions.put(emotionKA, R.drawable.emotion_ka);
+		emotions.put(emotionBY, R.drawable.emotion_by);
+		emotions.put(emotionAM, R.drawable.emotion_am);
+		emotions.put(emotionJE, R.drawable.emotion_je);
+		//5
+		emotions.put(emotionKun, R.drawable.emotion_kun);
+		emotions.put(emotionJK, R.drawable.emotion_jk);
+		emotions.put(emotionLH, R.drawable.emotion_lh);
+		emotions.put(emotionHanX, R.drawable.emotion_hanx);
+		emotions.put(emotionDB, R.drawable.emotion_db);
+		emotions.put(emotionFenD, R.drawable.emotion_fend);
+		//6
+		emotions.put(emotionZhM, R.drawable.emotion_zhm);
+		emotions.put(emotionYw, R.drawable.emotion_yw);
+		emotions.put(emotionXu, R.drawable.emotion_xu);
+		emotions.put(emotionYun, R.drawable.emotion_yun);
+		emotions.put(emotionZheM, R.drawable.emotion_zhem);
+		emotions.put(emotionShuai, R.drawable.emotion_shuai);
+		//7
+		emotions.put(emotionKL, R.drawable.emotion_kl);
+		emotions.put(emotionQD, R.drawable.emotion_qd);
+		emotions.put(emotionZJ, R.drawable.emotion_zj);
+		emotions.put(emotionCH, R.drawable.emotion_ch);
+		emotions.put(emotionKB, R.drawable.emotion_kb);
+		emotions.put(emotionGZ, R.drawable.emotion_gz);
+		//8
+		emotions.put(emotionQDL, R.drawable.emotion_qdl);
+		emotions.put(emotionHuaiX, R.drawable.emotion_huaix);
+		emotions.put(emotionZHH, R.drawable.emotion_zhh);
+		emotions.put(emotionYHH, R.drawable.emotion_yhh);
+		emotions.put(emotionHQ, R.drawable.emotion_hq);
+		emotions.put(emotionBS, R.drawable.emotion_bs);
+		//9
+		emotions.put(emotionWQ, R.drawable.emotion_wq);
+		emotions.put(emotionZQL, R.drawable.emotion_zql);
+		emotions.put(emotionXE, R.drawable.emotion_xe);
+		emotions.put(emotionQQ, R.drawable.emotion_qq);
+		emotions.put(emotionDeng, R.drawable.emotion_deng);
+		emotions.put(emotionKeL, R.drawable.emotion_kel);
+		//10
+		emotions.put(emotionKKL, R.drawable.emotion_kkl);
+		emotions.put(emotionCD, R.drawable.emotion_cd);
+		emotions.put(emotionXG, R.drawable.emotion_xg);
+		emotions.put(emotionPJ, R.drawable.emotion_pj);
+		emotions.put(emotionLQ, R.drawable.emotion_lq);
+		emotions.put(emotionPP, R.drawable.emotion_pp);
+		//11
+		emotions.put(emotionKF, R.drawable.emotion_kf);
+		emotions.put(emotionMF, R.drawable.emotion_mf);
+		emotions.put(emotionZT, R.drawable.emotion_zt);
+		emotions.put(emotionMG, R.drawable.emotion_mg);
+		emotions.put(emotionMGDX, R.drawable.emotion_mgdx);
+		emotions.put(emotionWM, R.drawable.emotion_wm);
+		//12
+		emotions.put(emotionAX, R.drawable.emotion_ax);
+		emotions.put(emotionXS, R.drawable.emotion_xs);
+		emotions.put(emotionDG, R.drawable.emotion_dg);
+		emotions.put(emotionSD, R.drawable.emotion_sd);
+		emotions.put(emotionZD, R.drawable.emotion_zd);
+		emotions.put(emotionDAO, R.drawable.emotion_dao);
+		//13
+		emotions.put(emotionZQ, R.drawable.emotion_zq);
+		emotions.put(emotionJGZ, R.drawable.emotion_jgz);
+		emotions.put(emotionBB, R.drawable.emotion_bb	);
+		emotions.put(emotionYL, R.drawable.emotion_yl);
+		emotions.put(emotionTY, R.drawable.emotion_ty);
+		emotions.put(emotionLW, R.drawable.emotion_lw);
+		//14
+		emotions.put(emotionXR, R.drawable.emotion_xr);
+		emotions.put(emotionQiang, R.drawable.emotion_qiang);
+		emotions.put(emotionRuo, R.drawable.emotion_ruo);
+		emotions.put(emotionWS, R.drawable.emotion_ws);
+		emotions.put(emotionShL, R.drawable.emotion_shl);
+		emotions.put(emotionFL, R.drawable.emotion_fl);
+		//15
+		emotions.put(emotionGY, R.drawable.emotion_gy);
+		emotions.put(emotionQT, R.drawable.emotion_qt);
+		emotions.put(emotionCJ, R.drawable.emotion_cj);
+		emotions.put(emotionAN, R.drawable.emotion_an);
+		emotions.put(emotionNO, R.drawable.emotion_no);
+		emotions.put(emotionOK, R.drawable.emotion_ok);
 		
-		emotions.put("^hx^", R.drawable.emotion_hx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
-		emotions.put("^wx^", R.drawable.emotion_wx);
 	}
 
 	public static Integer[] mImageIds = { R.drawable.head_01, R.drawable.head_02,
