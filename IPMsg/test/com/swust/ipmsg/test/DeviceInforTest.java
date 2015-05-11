@@ -8,7 +8,7 @@ public class DeviceInforTest {
 	
 	
 	public static void main(String[] args) {
-		DeviceInfor deviceInfor = new DeviceInfor();
-		System.out.println("IP:" + deviceInfor.getIpAddress());
+	/*	DeviceInfor deviceInfor = new DeviceInfor();
+		System.out.println("IP:" + deviceInfor.getIpAddress());*/
 	}
 }

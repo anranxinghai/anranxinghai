@@ -62,7 +62,7 @@ public class PacketInternet {
 		 * friendKeys.add(integer);
 		 */
 		friendList.add(friendMap);
-		me = new Person();
+		me = new Person(IPMsgApplication.getContext());
 		/*
 		 * friendKeys.add(integer); friendList.add(friendMap);
 		 */
@@ -118,6 +118,9 @@ public class PacketInternet {
 				super.run();
 				if (NetWork.isWifiConnected(context)) {
 					try {
+						if (sendSocket == null) {
+							sendSocket = new DatagramSocket(IPMsg.IPMSG_DEFAULT_PORT);
+						}
 						sendSocket.send(datagramPacket);
 						try {
 							Thread.sleep(100);

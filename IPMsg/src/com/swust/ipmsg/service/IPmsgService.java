@@ -58,7 +58,7 @@ public class IPmsgService extends Service {
 		String msgString = "3.1.8" + ":" + packet_number + ":"
 				+ me.getUseName() + ":" + me.getUseName() + ":"
 				+ IPMsg.IPMSG_NEW_BR_ENTRY + ":" + me.getUseName();*/
-		packet = new Packet();
+		packet = new Packet(getApplicationContext());
 		packet.setCommandNO(IPMsg.IPMSG_NEW_BR_ENTRY);
 		
 		onLine = new Thread(new OnLine(packet));

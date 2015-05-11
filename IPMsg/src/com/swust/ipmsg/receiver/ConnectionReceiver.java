@@ -40,7 +40,7 @@ public class ConnectionReceiver extends BroadcastReceiver {
 					e1.printStackTrace();
 				}
 		    	 Log.d(TAG, "connected");
-		    	 Packet packet = new Packet();
+		    	 Packet packet = new Packet(context);
 		    	 packet.setCommandNO(IPMsg.IPMSG_NEW_BR_ENTRY);
 		    	 context.startService(intent);
 		    	 try {

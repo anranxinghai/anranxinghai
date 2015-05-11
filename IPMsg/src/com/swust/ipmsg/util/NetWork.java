@@ -15,16 +15,16 @@ public class NetWork {
 	private static Context context = IPMsgApplication.getContext();
 	
 	public static String localAddress = 
-			IPv4Util.intToIp(new DeviceInfor().getIpAddress());
+			IPv4Util.intToIp(new DeviceInfor(context).getIpAddress());
 	
 	public static String subAddress = 
-			IPv4Util.intToIp(new DeviceInfor().getIpAddress()&0x00ffffff);
+			IPv4Util.intToIp(new DeviceInfor(context).getIpAddress()&0x00ffffff);
 	
 	public static String broadcastAddress = 
-			IPv4Util.intToIp(new DeviceInfor().getIpAddress()|0xff000000);
+			IPv4Util.intToIp(new DeviceInfor(context).getIpAddress()|0xff000000);
 	
-	public NetWork(){
-		context = IPMsgApplication.getContext();
+	public NetWork(Context context){
+		this.context = context;
 	}
 	
 /*public NetWork(Context context){

@@ -224,7 +224,7 @@ public class ChatActivity extends Activity implements OnClickListener{
 			chartMsgPanel.addView(view);
 			
 			mHandler.post(scrollRunnable);
-			Packet packet = new Packet();
+			Packet packet = new Packet(ChatActivity.this);
 			packet.setCommandNO(IPMsg.IPMSG_NEW_SENDMSG);
 			packet.setAdditionalSection(msg);
 			PacketInternet.sendMessage(packet, person.getIpAddress());

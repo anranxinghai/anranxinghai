@@ -2,6 +2,8 @@ package com.swust.ipmsg.util;
 
 import java.util.Calendar;
 
+import android.content.Context;
+
 import com.swust.ipmsg.service.PacketInternet;
 
 
@@ -29,9 +31,11 @@ public class Packet {
 	private static final String split2 = split + split;
 	private static final String split5 = split + split + split + split + split;
 
-	public Packet() {
+	private Context context;
+	public Packet(Context context) {
 		// TODO Auto-generated constructor stub
-		DeviceInfor deviceInfor = new DeviceInfor();
+		this.context = context;
+		DeviceInfor deviceInfor = new DeviceInfor(this.context);
 		String telephoneName = deviceInfor.getTeleType();
 		vision = "3.1.8";
 		packetNO = (int) (Calendar.getInstance().getTime().getTime()%Integer.MAX_VALUE);

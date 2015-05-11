@@ -717,7 +717,7 @@ public class MainActivity extends Activity implements OnTouchListener,
 				me = PacketInternet.getMyInformation();
 				nickname.setText(me.getUserName());
 				headIcon.setImageResource(me.getIcon());
-				Packet packet = new Packet();
+				Packet packet = new Packet(MainActivity.this);
 				packet.setCommandNO(IPMsg.IPMSG_NEW_BR_ABSENCE);
 				PacketInternet.broadcastMessage(packet);
 

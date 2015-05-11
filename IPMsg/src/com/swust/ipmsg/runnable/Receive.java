@@ -132,7 +132,7 @@ public class Receive extends SecurityThread{
 				 * 
 				 * friendKeys.add(i); friendMap.put(i, person);
 				 */
-				Person person = new Person();
+				Person person = new Person(context);
 				String ipString = datagramPacket.getAddress().toString()
 						.substring(1);
 				person.setUserId(IPv4Util.ipToInt(ipString));
@@ -147,14 +147,14 @@ public class Receive extends SecurityThread{
 				}
 				friendMap.put(integer, person);
 				// friendList.add(friendMap);
-				packet = new Packet();
+				packet = new Packet(context);
 				packet.setCommandNO(IPMsg.IPMSG_ANSENTRY);
 				PacketInternet.sendMessage(packet, person.getIpAddress());
 				sendPersonHasChangedBroadcast();
 				break;
 			case IPMsg.IPMSG_ANSENTRY:
 			case IPMsg.IPMSG_NEW_ANSENTRY:
-				person = new Person();
+				person = new Person(context);
 				ipString = datagramPacket.getAddress().toString().substring(1);
 				person.setUserId(IPv4Util.ipToInt(ipString));
 				person.setIpAddress(ipString);
@@ -171,7 +171,7 @@ public class Receive extends SecurityThread{
 				sendPersonHasChangedBroadcast();
 				break;
 			case IPMsg.IPMSG_NEW_BR_ABSENCE:
-				person = new Person();
+				person = new Person(context);
 				ipString = datagramPacket.getAddress().toString().substring(1);
 				person.setUserId(IPv4Util.ipToInt(ipString));
 				person.setIpAddress(ipString);
@@ -190,7 +190,7 @@ public class Receive extends SecurityThread{
 			case IPMsg.IPMSG_NEW_SENDMSG:
 			case IPMsg.IPMSG_SENDMSG:
 				String packetNO = new Long(packet.getPacketNO()).toString();
-				person = new Person();
+				person = new Person(context);
 				Message message = new Message(getCurrentTime(),
 						packet.getAdditionalSection());
 				message.setMine(false);
@@ -217,7 +217,7 @@ public class Receive extends SecurityThread{
 				intent.putExtra("userId", userId);
 				intent.putExtra("msgCount", messages.size());
 				context.sendBroadcast(intent);
-				packet = new Packet();
+				packet = new Packet(context);
 				packet.setCommandNO(IPMsg.IPMSG_RECVMSG);
 				packet.setAdditionalSection(packetNO);
 				PacketInternet.sendMessage(packet, person.getIpAddress());
@@ -228,7 +228,7 @@ public class Receive extends SecurityThread{
 				break;
 			case IPMsg.IPMSG_BR_EXIT:
 			case IPMsg.IPMSG_NEW_BR_EXIT:
-				person = new Person();
+				person = new Person(context);
 				ipString = datagramPacket.getAddress().toString().substring(1);
 				person.setUserId(IPv4Util.ipToInt(ipString));
 				person.setIpAddress(datagramPacket.getAddress().toString());

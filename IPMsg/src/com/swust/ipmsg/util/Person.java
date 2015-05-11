@@ -2,6 +2,8 @@ package com.swust.ipmsg.util;
 
 import java.io.Serializable;
 
+import android.content.Context;
+
 
 public class Person implements Serializable{
 	/**
@@ -14,8 +16,10 @@ public class Person implements Serializable{
 	private String ipAddress;// IP地址
 	private String macAddress;
 	private int icon = -1;
-	public Person(){
-		DeviceInfor deviceInfor = new DeviceInfor();
+	private Context context;
+	public Person(Context context){
+		this.context = context;
+		DeviceInfor deviceInfor = new DeviceInfor(this.context);
 		String name = deviceInfor.getTeleType();
 		userName = name;
 		hostName = "Android";

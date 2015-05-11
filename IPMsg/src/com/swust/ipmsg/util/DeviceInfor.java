@@ -34,14 +34,13 @@ public class DeviceInfor {
 	private String mac = null;
 	private int ipAddress;
 
-	public DeviceInfor() {
-		context = IPMsgApplication.getContext();
+	public DeviceInfor(Context context) {
+		this.context = context;
 		TelephonyManager mTm = null;
 		try {
-			mTm = (TelephonyManager) context
-					.getSystemService(Context.TELEPHONY_SERVICE);
+			mTm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 
-			 imei = mTm.getDeviceId();
+			imei = mTm.getDeviceId();
 			imsi = mTm.getSubscriberId();
 			teleNum = mTm.getLine1Number(); // 手机号码，有的可得，有的不可得
 		} catch (Exception e) {
@@ -50,7 +49,7 @@ public class DeviceInfor {
 		}
 
 		teleType = android.os.Build.MODEL; // 手机型号
-	
+
 		cpuInfor = getCpuInfo();
 		mac = getMacAddress();
 		ipAddress = getIPAddress();
@@ -72,13 +71,10 @@ public class DeviceInfor {
 
 	public String getAllApp() {
 		String result = "";
-		List<PackageInfo> packages = context.getPackageManager()
-				.getInstalledPackages(0);
+		List<PackageInfo> packages = context.getPackageManager().getInstalledPackages(0);
 		for (PackageInfo i : packages) {
 			if ((i.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
-				result += i.applicationInfo.loadLabel(
-						context.getPackageManager()).toString()
-						+ ",";
+				result += i.applicationInfo.loadLabel(context.getPackageManager()).toString() + ",";
 			}
 		}
 		return result.substring(0, result.length() - 1);
@@ -109,19 +105,21 @@ public class DeviceInfor {
 
 	private String getMacAddress() {
 		String mac = "";
-			WifiManager wifiManager = (WifiManager) context
-					.getSystemService(Context.WIFI_SERVICE);
-			WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-			mac = wifiInfo.getMacAddress();
-			//在没有wifi的情况下，返回的mac的值为null
-			if (mac != null) {
-				mac = mac.replaceAll(":", "-");
-			}else {
-				Toast.makeText(context, "Wifi连接失败，请确认Wifi处于开启状态", Toast.LENGTH_LONG).show();
-				mac = "00-00-00-00-00-00";
-			}
-			Log.i(TAG, "MAC:" + mac);
-		
+		if (context == null) {
+			context = IPMsgApplication.getContext();
+		}
+		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+		mac = wifiInfo.getMacAddress();
+		// 在没有wifi的情况下，返回的mac的值为null
+		if (mac != null) {
+			mac = mac.replaceAll(":", "-");
+		} else {
+			Toast.makeText(context, "Wifi连接失败，请确认Wifi处于开启状态", Toast.LENGTH_LONG).show();
+			mac = "00-00-00-00-00-00";
+		}
+		Log.i(TAG, "MAC:" + mac);
+
 		return mac;
 	}
 
@@ -131,35 +129,31 @@ public class DeviceInfor {
 		builder.setIcon(R.drawable.ic_launcher);
 		builder.setTitle(R.string.alert_dialog_seting_wifi_title);
 		builder.setMessage(R.string.alert_dialog_msg);
-		builder.setPositiveButton(R.string.alert_dialog_ok,
-				new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(R.string.alert_dialog_ok, new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						Intent intent = new Intent(
-								Settings.ACTION_ACCESSIBILITY_SETTINGS);
-						//context.startActivity(intent);
-					}
-				});
-		builder.setNegativeButton(R.string.alert_dialog_cancle,
-				new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+				// context.startActivity(intent);
+			}
+		});
+		builder.setNegativeButton(R.string.alert_dialog_cancle, new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-					}
-				});
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+			}
+		});
 		return builder.create();
 	}
 
 	private int getIPAddress() {
 		int ipAddress = 0;
-		WifiManager wifiManager = (WifiManager) context
-				.getSystemService(Context.WIFI_SERVICE);
+		WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
 		WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 		ipAddress = wifiInfo.getIpAddress();
-		if (ipAddress == 0 ) {
+		if (ipAddress == 0) {
 			ipAddress = 2130706433;
 		}
 		Log.i(TAG, "ipAddress:" + ipAddress);

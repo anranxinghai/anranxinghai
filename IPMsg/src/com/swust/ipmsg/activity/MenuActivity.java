@@ -137,7 +137,7 @@ public class MenuActivity extends Activity {
 	                | Intent.FLAG_ACTIVITY_CLEAR_TOP);*/
 			switch (v.getId()) {
 			case R.id.enter:
-				Packet packet= new Packet();
+				Packet packet= new Packet(MenuActivity.this);
 				packet.setCommandNO(IPMsg.IPMSG_NEW_BR_ENTRY);
 				//PacketInternet.broadcastMessage(packet);
 				intent.setClass(MenuActivity.this, MainActivity.class);
