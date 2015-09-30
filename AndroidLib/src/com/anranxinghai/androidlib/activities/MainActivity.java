@@ -1,4 +1,8 @@
-package com.anranxinghai.androidlib;
+package com.anranxinghai.androidlib.activities;
+
+import java.util.Random;
+
+import com.anranxinghai.androidlib.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -30,5 +34,31 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	
+	
+	/**
+	 * 随机生成字符串（一般用户数据库中id）
+	 * @param length 要生成的字符串的长度
+	 * @return
+	 */
+	public static String randomString(int length){
+		Random random = null;
+		char[] numbersAndLetters = null;
+		if (length < 1) {
+			return null;
+		}
+		if (random == null) {
+			random = new Random();
+			numbersAndLetters = ("0123456789abcdefghijklmnopqrstuvwxyz" +
+	                   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ").toCharArray();
+		}
+		char[] chars = new char[length];
+		for (int i = 0; i < chars.length; i++) {
+			chars[i] = numbersAndLetters[random.nextInt(71)];
+		}
+		
+		return new String(chars);
 	}
 }

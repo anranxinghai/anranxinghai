@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ApplicationB</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hint_insert">请输入插入条数</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_content_provider">通过Provider获取应用A的数据</string>
+    <string name="button_insert_content_provider">通过Provider向A中插入数据</string>
+    <string name="button_aidl_service">通过AIDL获取应用A的数据</string>
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="save">保存</string>
+
+</resources>
